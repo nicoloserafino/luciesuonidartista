@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Generatore di Frasi</title>
+  <style>
+    body {
+      font-family: 'Helvetica', sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #frase {
+      font-size: 1.5em;
+      margin: 20px;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Generatore di Frasi</h1>
+  <div id="frase">Clicca il pulsante per una frase!</div>
+  <button onclick="generaFrase()">Nuova frase</button>
+
+  <script>
+    const frasi = [
+      "La vita è come una fotografia: serve il negativo per svilupparsi.",
+      "Ogni giorno è una seconda possibilità.",
+      "Chi semina pensieri, raccoglie destini.",
+      "Il silenzio è la risposta più forte a chi non ti capisce.",
+      "Sii il cambiamento che vuoi vedere nel mondo."
+    ];
+
+    function generaFrase() {
+      const randomIndex = Math.floor(Math.random() * frasi.length);
+      document.getElementById("frase").textContent = frasi[randomIndex];
+    }
+  </script>
+</body>
+</html>
